@@ -1,0 +1,104 @@
+
+--- BENCH ECHO START ---
+
+--- GO STDLIB ---
+2023/04/25 22:22:40 echo server started on port 5001
+*** 50 connections, 10 seconds, 6 byte packets
+Destination: [127.0.0.1]:5001
+Interface lo0 address [127.0.0.1]:0
+Using interface lo0 to connect to [127.0.0.1]:5001
+Ramped up to 100 connections.
+Total data sent:     11249.8 MiB (11796320096 bytes)
+Total data received: 11235.2 MiB (11780957102 bytes)
+Bandwidth per channel: 188.428⇅ Mbps (23553.6 kBps)
+Aggregate bandwidth: 9415.282↓, 9427.560↑ Mbps
+Packet rate estimate: 865329.2↓, 831568.8↑ (8↓, 16↑ TCP MSS/op)
+Test duration: 10.0101 s.
+--- DONE ---
+
+--- EVIO ---
+2023/04/25 22:22:53 echo server started on port 5002 (loops: 1)
+*** 50 connections, 10 seconds, 6 byte packets
+Destination: [127.0.0.1]:5002
+Interface lo0 address [127.0.0.1]:0
+Using interface lo0 to connect to [127.0.0.1]:5002
+Ramped up to 100 connections.
+Total data sent:     23375.9 MiB (24511400408 bytes)
+Total data received: 23374.9 MiB (24510319376 bytes)
+Bandwidth per channel: 391.682⇅ Mbps (48960.3 kBps)
+Aggregate bandwidth: 19583.688↓, 19584.552↑ Mbps
+Packet rate estimate: 1793100.6↓, 1733941.0↑ (12↓, 21↑ TCP MSS/op)
+Test duration: 10.0125 s.
+--- DONE ---
+
+--- EVIOP ---
+2023/04/25 22:23:05 echo server started on port 5003 (loops: 1)
+*** 50 connections, 10 seconds, 6 byte packets
+Destination: [127.0.0.1]:5003
+Interface lo0 address [127.0.0.1]:0
+Using interface lo0 to connect to [127.0.0.1]:5003
+Ramped up to 100 connections.
+Total data sent:     18441.3 MiB (19337074703 bytes)
+Total data received: 18402.4 MiB (19296308670 bytes)
+Bandwidth per channel: 309.000⇅ Mbps (38625.0 kBps)
+Aggregate bandwidth: 15433.701↓, 15466.306↑ Mbps
+Packet rate estimate: 1424694.9↓, 1348516.0↑ (11↓, 18↑ TCP MSS/op)
+Test duration: 10.0022 s.
+--- DONE ---
+
+--- GEV ---
+*** 50 connections, 10 seconds, 6 byte packets
+Destination: [127.0.0.1]:5004
+Interface lo0 address [127.0.0.1]:0
+Using interface lo0 to connect to [127.0.0.1]:5004
+Ramped up to 100 connections.
+Total data sent:     31580.1 MiB (33114155432 bytes)
+Total data received: 31577.5 MiB (33111457748 bytes)
+Bandwidth per channel: 529.627⇅ Mbps (66203.4 kBps)
+Aggregate bandwidth: 26480.266↓, 26482.424↑ Mbps
+Packet rate estimate: 2442463.1↓, 2311687.8↑ (12↓, 24↑ TCP MSS/op)
+Test duration: 10.0034 s.
+--- DONE ---
+
+--- NBIO ---
+2023/04/25 22:23:30.493 [INF] NBIO[NB] start listen on: ["tcp@[::]:5005"]
+*** 50 connections, 10 seconds, 6 byte packets
+Destination: [127.0.0.1]:5005
+Interface lo0 address [127.0.0.1]:0
+Using interface lo0 to connect to [127.0.0.1]:5005
+Ramped up to 100 connections.
+Total data sent:     21749.8 MiB (22806278880 bytes)
+Total data received: 17294.9 MiB (18135042589 bytes)
+Bandwidth per channel: 327.146⇅ Mbps (40893.3 kBps)
+Aggregate bandwidth: 14491.012↓, 18223.616↑ Mbps
+Packet rate estimate: 1338386.2↓, 1563133.7↑ (12↓, 31↑ TCP MSS/op)
+Test duration: 10.0117 s.
+--- DONE ---
+
+--- GNET ---
+2023/04/25 22:23:43 Echo server is listening on :5006 (multi-cores: true, loops: 10)
+*** 50 connections, 10 seconds, 6 byte packets
+Destination: [127.0.0.1]:5006
+Interface lo0 address [127.0.0.1]:0
+Using interface lo0 to connect to [127.0.0.1]:5006
+Ramped up to 100 connections.
+Total data sent:     35796.9 MiB (37535821188 bytes)
+Total data received: 35813.7 MiB (37553369624 bytes)
+Bandwidth per channel: 600.212⇅ Mbps (75026.5 kBps)
+Aggregate bandwidth: 30017.616↓, 30003.589↑ Mbps
+Packet rate estimate: 2606395.3↓, 2575081.3↑ (11↓, 24↑ TCP MSS/op)
+Test duration: 10.0084 s.
+--- DONE ---
+
+--- GEVENT ---
+Destination: [127.0.0.1]:5007
+Interface lo0 address [127.0.0.1]:0
+Using interface lo0 to connect to [127.0.0.1]:5007
+Ramped up to 100 connections.
+Total data sent:     20346.7 MiB (21335057090 bytes)
+Total data received: 20338.7 MiB (21326638236 bytes)
+Bandwidth per channel: 340.922⇅ Mbps (42615.2 kBps)
+Aggregate bandwidth: 17042.714↓, 17049.441↑ Mbps
+Packet rate estimate: 1553442.0↓, 1490555.8↑ (11↓, 21↑ TCP MSS/op)
+Test duration: 10.0109 s.
+--- BENCH ECHO DONE ---
