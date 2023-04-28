@@ -34,7 +34,7 @@ func main() {
 				conn.Close()
 			}()
 			//log.Printf("opened: %d: %s", id, conn.RemoteAddr().String())
-			var packet [0xFFF]byte
+			var packet [1024 * 64]byte
 			for {
 				n, err := conn.Read(packet[:])
 				if err != nil {
