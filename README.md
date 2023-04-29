@@ -1,6 +1,6 @@
-## gevent 压测
+## gevent benchmark
 
-压测工具:
+benchmark tool:
 
 -  [tcpkali](https://github.com/machinezone/tcpkali) for Echo
 
@@ -11,14 +11,13 @@
 | FreeBSD  | [pkgng](https://wiki.freebsd.org/pkgng) | `pkg install tcpkali`  |
 | Linux    | [nix](https://nixos.org/nix/)           | `nix-env -i tcpkali`   |
 
-运行：
+Run：
 
 ```bash
  ./bench.sh      
 ```
 
-## 备注
+## Note
 
--  当前压测结果是在我的 MacBook Pro 上运行得出
--  压测程序运行在单线程模式下 (GOMAXPROC=1)
--  TCP 客户端（Ipv4）在本地（localhost）连接
+-  Running inside a container
+-  Single threaded mode (GOMAXPROC=1)

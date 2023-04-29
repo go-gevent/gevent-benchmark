@@ -13,4 +13,4 @@ RUN git clone https://github.com/satori-com/tcpkali.git && \
 
 COPY . .
 
-RUN go mod tidy
+RUN go mod tidy && bash /app/bench.sh
