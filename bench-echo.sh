@@ -36,6 +36,7 @@ function gobench {
     tcpkali --workers 1 -c 100 -T 10s -m "PING{$nl}" 127.0.0.1:$4
     echo "--- DONE ---"
     echo ""
+    sleep 10
 }
 
 gobench "GO STDLIB" bin/net-echo-server net-echo-server/main.go 5001
