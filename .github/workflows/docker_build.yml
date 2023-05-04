@@ -1,0 +1,45 @@
+name: Build Docker Image and Export Files
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_and_export:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: 304975393/gevent-benchmark:latest
+
+      - name: Run container and export files
+        run: |
+          docker run --name gevent-benchmark 304975393/gevent-benchmark:latest
+          docker cp gevent-benchmark:/app/out ./output
+          docker rm gevent-benchmark
+
+      - name: Upload exported files
+        uses: actions/upload-artifact@v2
+        with:
+          name: exported-files
+          path: ./output
