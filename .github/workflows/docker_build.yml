@@ -35,11 +35,11 @@ jobs:
       - name: Run container and export files
         run: |
           docker run --name gevent-benchmark 304975393/gevent-benchmark:latest
-          docker cp gevent-benchmark:/app/out ./output
+          docker cp gevent-benchmark:/app/out/echo.png ./output/echo.png
           docker rm gevent-benchmark
 
       - name: Upload exported files
         uses: actions/upload-artifact@v2
         with:
           name: exported-files
-          path: ./output
+          path: ./output/echo.png
