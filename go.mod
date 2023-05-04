@@ -6,7 +6,7 @@ require (
 	github.com/Allenxuxu/eviop v0.0.0-20190919234625-d421704e9f73
 	github.com/Allenxuxu/gev v0.5.0
 	github.com/Allenxuxu/ringbuffer v0.0.11
-	github.com/go-gevent/gevent v0.0.0-20230425162212-4faf8999a7ba
+	github.com/go-gevent/gevent v0.0.1
 	github.com/lesismal/nbio v1.3.12
 	github.com/panjf2000/gnet v1.4.0
 	github.com/tidwall/evio v1.0.8
